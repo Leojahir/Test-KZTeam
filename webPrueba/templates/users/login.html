@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <title>Loging</title>
+
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="col-12 col-md-6 offset-md-3">
+                        <div class="card">
+                        <div class="card-body">
+
+                    <h2>Login</h2>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+
+                        <br/>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        {%if messages%}
+
+                            {%for m in messages%}
+                            {%if m.tags == 'success'%}
+                                <div class="alert alert-success">
+                                    {{m}}
+                                </div>
+                            {%else%} 
+                                <div class="alert alert-danger">
+                                    {{m}}
+                                </div>
+                            {%endif%}
+                            {%endfor%}
+
+                        {%endif%}
+                    </form>
+
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

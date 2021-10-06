@@ -1,0 +1,33 @@
+
+{%url 'login' as login%}
+{%url 'registro' as registro%}
+{%url 'salir' as salir%}
+{%url 'index' as index%}
+{%url 'entrada' as entrada%}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{index}}">Home</span></a>
+        </li>
+        {%if user.is_authenticated%}
+        <li class="nav-item active">
+            <a class="nav-link" href="{{entrada}}"><span class="fas fa-sign-in-alt"></span>Ingresar Enlace</a>
+          </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{salir}}"><span class="fas fa-sign-in-alt"></span>Salir</a>
+        </li>
+        {%else%}
+        <li class="nav-item active">
+            <a class="nav-link" href="{{login}}">Login</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{{registro}}">Registro</span></a>
+          </li>
+        {%endif%}
+      </ul>
+    </div>
+  </nav>

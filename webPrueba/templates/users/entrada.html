@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <title>Registro</title>
+
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="col-12 col-md-6 offset-md-3">
+                    <div class="card">
+                    <div class="card-body">
+
+                        <h2>Entrada de Enlaces</h2>
+                    <form method="POST">
+                        {%csrf_token%}
+                        {% for m in form%}
+                            <div class="form-group">
+                                {{m.label_tag}}
+                                {{m}}
+                                
+                                {%if m.errors%}
+                                    {{m.errors}}
+                                {%endif%}
+                            </div>
+                        {%endfor%}
+                        <br/>
+                        <button type="submit" class="btn btn-success">Ingresar Entrada</button>
+                    </form>
+                    </div>
+                    </div>    
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
