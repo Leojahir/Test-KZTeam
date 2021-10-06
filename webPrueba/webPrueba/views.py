@@ -13,7 +13,7 @@ from django.contrib.auth.models import User
 
 def index(request):
 
-    entradas = EntradaModel.objects.all()
+    entradas = EntradaModel.objects.order_by('-valoracion')
 
     return render(request, 'index.html', {
         "entrada":entradas
