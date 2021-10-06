@@ -1,5 +1,12 @@
-# Test-KZTeam
+Se debe de clonar el repositorio. 
 
- Prueba primer commit.
- Prueba de Pull
- Prueba modificacion
+Ubicarse en carpeta de proyecto /Test-KZTeam/webPrueba y ejecutar el comando mediante consola
+
+python manage.py migrate
+
+Una vez terminado el proceso ejecutar: 
+
+python manage.py runserver
+
+Una vez ejecutado y el servidor ya en ejecución, ingresar a ruta: http://127.0.0.1:8000
+Ingresar al menu "Registro" para crear el usuario y empezar a interactuar con el sistema. 
